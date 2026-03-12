@@ -1,46 +1,54 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Credit Card Fraud Detection</title>
-    <style>
+<title>Credit Card Fraud Detection</title>
 
-        body{
-            font-family: Arial;
-            background:#f4f6f8;
-            text-align:center;
-        }
+<style>
 
-        .container{
-            margin-top:50px;
-            background:white;
-            width:400px;
-            padding:30px;
-            margin-left:auto;
-            margin-right:auto;
-            border-radius:10px;
-            box-shadow:0px 0px 10px rgba(0,0,0,0.1);
-        }
+body{
+    font-family: "Rockwell Extra Bold", Rockwell, serif;
+    background:#080e1f;
+    color:#abb7b7;
+    text-align:center;
+}
 
-        input{
-            width:90%;
-            padding:10px;
-            margin:8px;
-        }
+.container{
+    margin-top:50px;
+    background:#10182f;
+    width:400px;
+    padding:30px;
+    margin-left:auto;
+    margin-right:auto;
+    border-radius:10px;
+    box-shadow:0px 0px 10px rgba(0,0,0,0.4);
+}
 
-        button{
-            padding:10px 20px;
-            background:#007BFF;
-            color:white;
-            border:none;
-            border-radius:5px;
-            cursor:pointer;
-        }
+input, select{
+    width:90%;
+    padding:10px;
+    margin:8px;
+    background:#10182f;
+    border:1px solid #abb7b7;
+    border-radius:5px;
+    color:#abb7b7;
+}
 
-        button:hover{
-            background:#0056b3;
-        }
+button{
+    padding:10px 20px;
+    background:#abb7b7;
+    color:#080e1f;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+    font-weight:bold;
+}
 
-    </style>
+button:hover{
+    background:#d0d8d8;
+}
+
+</style>
+
 </head>
 
 <body>
@@ -51,15 +59,37 @@
 
 <form action="/predict" method="post">
 
-<input type="number" step="any" name="amount" placeholder="Transaction Amount" required>
+<input type="number" step="any" name="Amount" placeholder="Transaction Amount" required>
 
-<input type="number" step="any" name="merchant_id" placeholder="Merchant ID" required>
+<input type="number" step="any" name="MerchantID" placeholder="Merchant ID" required>
 
-<input type="number" name="transaction_hour" placeholder="Transaction Hour (0-23)" required>
+<input type="number" name="TransactionHour" placeholder="Transaction Hour (0-23)" required>
 
-<input type="number" name="transaction_day" placeholder="Transaction Day (1-31)" required>
+<input type="number" name="TransactionDay" placeholder="Transaction Day (1-31)" required>
 
-<input type="number" name="transaction_month" placeholder="Transaction Month (1-12)" required>
+<input type="number" name="TransactionMonth" placeholder="Transaction Month (1-12)" required>
+
+
+<select name="TransactionType_purchase">
+<option value="1">Purchase</option>
+<option value="0">Refund</option>
+</select>
+
+
+<select name="Location">
+
+<option value="Chicago">Chicago</option>
+<option value="Dallas">Dallas</option>
+<option value="Houston">Houston</option>
+<option value="Los Angeles">Los Angeles</option>
+<option value="New York">New York</option>
+<option value="Philadelphia">Philadelphia</option>
+<option value="Phoenix">Phoenix</option>
+<option value="San Antonio">San Antonio</option>
+<option value="San Diego">San Diego</option>
+<option value="San Jose">San Jose</option>
+
+</select>
 
 <br>
 
